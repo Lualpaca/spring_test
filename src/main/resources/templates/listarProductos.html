@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title th:text="${titulo}"></title>
+</head>
+<body>
+
+	<h1 th:if="${productos.isEmpty()}">Not found data!!</h1>
+
+	<table th:if="${productos.size()>0}" border="1" class="">
+		<tr>
+			<th>Code</th>
+			<th>Name</th>
+			<th>Price</th>
+		</tr>
+		<tr th:each="producto: ${productos} ">
+			<td th:text="${producto.code}"></td>
+			<td th:text="${producto.name}"></td>
+			<td th:text="${producto.price}"></td>
+		</tr>
+	</table>
+
+</body>
+</html>

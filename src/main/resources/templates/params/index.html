@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymelead.org">
+<head>
+<meta charset="UTF-8">
+<title>Enviar parametros de Request HTTP GET - URL</title>
+</head>
+<body>
+	<h1>Enviar parametros de Request HTTP GET - URL</h1>
+	<li><a th:href="@{/params/string(texto='Lualpaca')}">Paso de valor a URL?texto=Hola Luis</a></li>
+	<li><a th:href="@{/params/string(texto='Andrea Suaréz')}">params/string</a></li>
+	<li><a th:href="@{/params/mix-params(saludo='Cómo estas Andrés', numero=9)}">params/mix-params?saludo=Cómo estás Andrés&numero=7</a></li>
+	<li><a th:href="@{/params/mix-params-request(saludo='Cómo estas Andrés', numero=10)}">params/mix-params-request?saludo=Cómo estás Andrés&numero=10</a></li>
+</body>
+</html>

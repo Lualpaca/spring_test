@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>List</title>
+</head>
+<body>
+<h1>Load users list</h1><br/>
+
+<h1 th:text="${titulo}"></h1>
+
+<!-- div th:if="${usuarios.size()==0}">No data found in the data!!!.</div--> 
+<div th:if="${usuarios.isEmpty()}">No data found in the data!!!.</div>
+
+	<table th:if="${usuarios.size()>  0}" border="1">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>last Name</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="usuario: ${usuarios}">
+				<td th:text="${usuario.nombre}"></td>
+				<td th:text="${usuario.apellido}"></td>
+				<td th:text="${usuario.email}"></td>
+			</tr>
+		</tbody>
+
+
+	</table>
+	<br/>
+	<table th:if="${productos.size()>0}" border="1" class="">
+		<tr>
+			<th>Code</th>
+			<th>Name</th>
+			<th>Price</th>
+		</tr>
+		<tr th:each="producto: ${productos} ">
+			<td th:text="${producto.code}"></td>
+			<td th:text="${producto.name}"></td>
+			<td th:text="${producto.price}"></td>
+		</tr>
+	</table>
+
+
+</body>
+</html>
